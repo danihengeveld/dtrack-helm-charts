@@ -119,14 +119,9 @@ frontend:
     tag: ~
     pullPolicy: IfNotPresent
   securityContext:
-    allowPrivilegeEscalation: false
-    capabilities:
-      drop:
-        - ALL
-    runAsNonRoot: true
+    allowPrivilegeEscalation: true
     readOnlyRootFilesystem: false # RO filesystems are not supported by the frontend
-    seccompProfile:
-      type: RuntimeDefault
+    privileged: true
   command: []
   args: []
   resources:
